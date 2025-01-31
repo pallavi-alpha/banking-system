@@ -157,7 +157,7 @@ const TransactionForm: React.FC<{
 
 const BackButton: React.FC<{ onClick: () => void }> = ({ onClick }) => (
   <div className="mt-2 flex space-x-2 mx-auto justify-center">
-    <Button className="mb-6" onClick={onClick}>
+    <Button className="mb-4" onClick={onClick}>
       Main
     </Button>
   </div>
@@ -178,7 +178,7 @@ const TransactionTables: React.FC<{ transactions: Transactions }> = ({
               <TableHead>Date</TableHead>
               <TableHead>Transaction ID</TableHead>
               <TableHead>Type</TableHead>
-              <TableHead>Amount</TableHead>
+              <TableHead className="text-right">Amount</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -199,7 +199,9 @@ const TransactionRow: React.FC<{ transaction: Transaction }> = ({
     <TableCell>{transaction.date}</TableCell>
     <TableCell>{transaction.txnId}</TableCell>
     <TableCell>{transaction.type}</TableCell>
-    <TableCell>{transaction.amount.toFixed(2)}</TableCell>
+    <TableCell className="text-right">
+      {transaction.amount.toFixed(2)}
+    </TableCell>
   </TableRow>
 );
 

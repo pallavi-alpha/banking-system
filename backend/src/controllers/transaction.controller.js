@@ -49,7 +49,7 @@ export const addTransaction = asyncHandler(async (req, res) => {
     // Date comparison with first transaction
     if (transactions.length > 0) {
       const firstTransactionDate = transactions[0].date;
-      if (transactionDate <= parseDate(firstTransactionDate)) {
+      if (transactionDate < parseDate(firstTransactionDate)) {
         throw new ApiError(
           400,
           "Transaction date must be after the account's first transaction"

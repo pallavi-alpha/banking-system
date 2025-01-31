@@ -208,7 +208,7 @@ const ActionButtons: React.FC<{
   onBack: () => void;
 }> = ({ onGenerate, onBack }) => (
   <div className="mt-2 flex space-x-2 mx-auto justify-center">
-    <Button onClick={onBack} className="mb-6">
+    <Button onClick={onBack} className="mb-4">
       Main
     </Button>
   </div>
@@ -225,8 +225,8 @@ const TransactionsTable: React.FC<{ transactions: Transaction[] }> = ({
           <TableHead>Date</TableHead>
           <TableHead>Txn ID</TableHead>
           <TableHead>Type</TableHead>
-          <TableHead>Amount</TableHead>
-          <TableHead>Balance</TableHead>
+          <TableHead className="text-right">Amount</TableHead>
+          <TableHead className="text-right">Balance</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -251,8 +251,12 @@ const TransactionRow: React.FC<{ transaction: Transaction }> = ({
     <TableCell>{transaction.date}</TableCell>
     <TableCell>{transaction.txnId}</TableCell>
     <TableCell>{transaction.type}</TableCell>
-    <TableCell>{transaction.amount.toFixed(2)}</TableCell>
-    <TableCell>{transaction.balance.toFixed(2)}</TableCell>
+    <TableCell className="text-right">
+      {transaction.amount.toFixed(2)}
+    </TableCell>
+    <TableCell className="text-right">
+      {transaction.balance.toFixed(2)}
+    </TableCell>
   </TableRow>
 );
 

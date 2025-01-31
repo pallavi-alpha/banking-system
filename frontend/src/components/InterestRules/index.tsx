@@ -121,7 +121,7 @@ const InterestRules: React.FC<InterestRulesProps> = ({
         {error && <p className="text-red-500 mb-4 text-sm">{error}</p>}
 
         <div className="mt-2 flex space-x-2 mx-auto justify-center">
-          <Button className="mb-6" onClick={() => handleMenuSelection("")}>
+          <Button className="mb-4" onClick={() => handleMenuSelection("")}>
             Main
           </Button>
         </div>
@@ -134,7 +134,7 @@ const InterestRules: React.FC<InterestRulesProps> = ({
                 <TableRow>
                   <TableHead>Date</TableHead>
                   <TableHead>Rule ID</TableHead>
-                  <TableHead>Rate (%)</TableHead>
+                  <TableHead className="text-right">Rate (%)</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -142,7 +142,9 @@ const InterestRules: React.FC<InterestRulesProps> = ({
                   <TableRow key={index}>
                     <TableCell>{date}</TableCell>
                     <TableCell>{ruleId.toUpperCase()}</TableCell>
-                    <TableCell>{rate.toFixed(2)}</TableCell>
+                    <TableCell className="text-right">
+                      {rate.toFixed(2)}
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
