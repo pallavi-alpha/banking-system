@@ -1,118 +1,184 @@
 # 🏦 MERN Banking System
 
-This is a **full-stack banking system prototype** built using the **MERN stack** (MongoDB, Express.js, React.js, and Node.js). It allows users to input transactions, define interest rates, and print statements.
+![Main Menu](image.png)
+
+A full-stack banking system prototype with transaction management, interest rules, and statement generation capabilities.
+
+## 📋 Table of Contents
+
+- [Tech Stack](#-tech-stack)
+- [Features](#-features)
+- [Installation](#-installation)
+- [API Endpoints](#-api-endpoints)
+- [Frontend Structure](#-frontend-structure)
+- [Validation & Error Handling](#-validation--error-handling)
+- [Screenshots](#-screenshots)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React.js, Tailwind CSS, Shadcn.js,
-- **Backend**: Node.js, Express.js, MongoDB (Mongoose)
-- **Database**: MongoDB (Atlas or Local)
-- **API Testing**: Postman
+### **Frontend**
 
-## 🚀 Installation & Setup
+- React.js + TypeScript
+- Vite (Build Tool)
+- Tailwind CSS + Shadcn.js (UI Components)
+- React Toastify (Notifications)
 
-### 1️⃣ Clone the Repository
+### **Backend**
 
-```sh
+- Node.js + Express.js
+- MongoDB + Mongoose (ODM)
+- API Testing: Postman
+
+### **Database**
+
+- MongoDB Atlas (Cloud) / Local Instance
+
+## 🌟 Features
+
+- Transaction management (Deposit/Withdrawal)
+- Interest rule configuration
+- Account statement generation
+- Comprehensive input validation
+- Real-time balance calculation
+- User-friendly UI with toast notifications
+- Error handling with user-friendly messages
+
+## 🚀 Installation
+
+### **Prerequisites**
+
+- Node.js (v18+)
+- MongoDB (Atlas URI or local instance)
+- Git
+
+### **Setup Instructions**
+
+1. Clone the repository:
+
+```bash
 git clone https://github.com/YOUR_USERNAME/banking-system.git
 cd banking-system
 ```
 
-### 2️⃣ Install Backend Dependencies
+2. Backend Setup:
 
-```sh
+```bash
 cd backend
 npm install
 ```
 
-### 3️⃣ Set Up Environment Variables for Backend
+3. Create `.env` file:
 
-Create a `.env` file inside the **backend** folder and add:
-
-```env
+```bash
 PORT=8000
-MONGODB_URI="Please use yours"
+MONGODB_URI="your_mongodb_uri"
 CORS_ORIGIN=*
 ```
 
-### 4️⃣ Start the Backend Server
+4. Start backend:
 
-I have defined port as 8000, so server will start at http://localhost:8000
-
-```sh
+```bash
 npm run dev
 ```
 
-### 5️⃣ Install Frontend Dependencies
+5. Frontend Setup:
 
-```sh
+```bash
 cd ../frontend
 npm install
 ```
 
-### 6️⃣ Start the Frontend
+6. Start frontend:
 
-```sh
+```bash
 npm run dev
 ```
 
-The frontend will run on **http://localhost:5173/**, and the backend on **http://localhost:8000/**.
-
-## 📝 API Endpoints
+## 📡 API Endpoints
 
 ### **Transactions**
 
-- `POST /api/transactions/addTransaction` – Add a new transaction
-- `GET /api/transactions` – Get all transactions
-- `GET /api/transactions/getMonthlyTransactions` – Get monthly transactions by account
+| Method | Endpoint                       | Description              |
+| ------ | ------------------------------ | ------------------------ |
+| POST   | `/api/v1/transactions`         | Create new transaction   |
+| GET    | `/api/v1/transactions`         | Get all transactions     |
+| GET    | `/api/v1/transactions/monthly` | Get monthly transactions |
 
-## 📸 Screenshots
+### **Interest Rules**
 
-Main Menu
+| Method | Endpoint                 | Description              |
+| ------ | ------------------------ | ------------------------ |
+| POST   | `/api/v1/interest-rules` | Define new interest rule |
+| GET    | `/api/v1/interest-rules` | Get all interest rules   |
+
+## 🖥️ Frontend Structure
+
+### **Core Components**
+
+- **MainMenu** (`src/components/MainMenu/index.tsx`): Primary navigation interface
+- **TransactionInput** (`src/components/TransactionInput/index.tsx`): Transaction creation form
+- **InterestRules** (`src/components/InterestRules/index.tsx`): Interest rule management
+- **AccountStatement** (`src/components/AccountStatement/index.tsx`): Statement generation UI
+- **Quit** (`src/components/Quit/index.tsx`): Application exit handler
+
+### **Key Features**
+
+- Hot Module Replacement (HMR)
+- Type-safe React components
+- Responsive UI with Tailwind CSS
+- Form validation with error highlighting
+- Success/error toast notifications
+
+## 🛡️ Validation & Error Handling
+
+### **Date Validations:**
+
+- Future date prevention
+- Transaction sequence enforcement
+- YYYYMMDD format validation
+
+### **Financial Checks:**
+
+- Initial withdrawal prevention
+- Insufficient funds validation
+
+### **System Feedback:**
+
+- Inline form error messages
+- Toast notifications for success/errors
+- Clear API error responses
+
+### **Data Integrity:**
+
+- Transaction date > first transaction
+- Unique transaction ID generation
+- Interest rule validation
+
+Some screenshots:
+MainMenu
 ![alt text](image.png)
 
-Input Transaction Screen
-![alt text](image-2.png)
-
-Define Interest Rate Rules
-![alt text](image-3.png)
+Input Transaction
+![alt text](image-1.png)
 
 Print Statement
 ![alt text](image-4.png)
 
-## 🤝 Error Handling, Checks , Validation and Notifications
-
-Format validations:
+Validarions and Toast Messages
 ![alt text](image-5.png)
 ![alt text](image-6.png)
 ![alt text](image-7.png)
-
-Validation on transactions older then first transaction:
 ![alt text](image-8.png)
-
-Validation on Future Dated transaction:
 ![alt text](image-9.png)
-
-Unavailable data:
 ![alt text](image-10.png)
-
-Toast Message for Success:
 ![alt text](image-11.png)
 
-## 🤝 Contributing
+## 📄 License
 
-Pull requests are welcome! Follow these steps:
-
-1. Fork the repo
-2. Create a new branch (`git checkout -b feature-name`)
-3. Commit your changes (`git commit -m "Added feature X"`)
-4. Push to your branch (`git push origin feature-name`)
-5. Open a pull request
-
-## 📚 License
-
-This project is licensed under the **MIT License**.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 
-🔹 **Happy Coding!** 🎉
+The frontend will be accessible at `http://localhost:5173` by default (Vite's default port), while the backend runs on `http://localhost:8000` as specified.
