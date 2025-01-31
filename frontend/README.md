@@ -1,7 +1,3 @@
-Here is a suggested README file for your repository:
-
----
-
 # Banking System
 
 This repository contains a banking system project built with a combination of TypeScript, JavaScript, CSS, and HTML. The frontend is developed using React, TypeScript, and Vite to provide a minimal setup with hot module replacement (HMR) and some ESLint rules.
@@ -11,6 +7,7 @@ This repository contains a banking system project built with a combination of Ty
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
+- [UI Components](#ui-components)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -53,47 +50,32 @@ npm run dev
 
 This command will start the server and enable hot module replacement for a smooth development experience.
 
-## Expanding the ESLint Configuration
+## UI Components
 
-If you are developing a production application, it is recommended to update the configuration to enable type aware lint rules.
+### MainMenu
 
-1. Configure the top-level `parserOptions` property:
+- **File:** `src/components/MainMenu/index.tsx`
+- **Description:** Provides the main menu interface for user interaction, allowing users to select actions such as inputting transactions, defining interest rules, printing statements, or quitting.
 
-   ```js
-   export default tseslint.config({
-     languageOptions: {
-       // other options...
-       parserOptions: {
-         project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-         tsconfigRootDir: import.meta.dirname,
-       },
-     },
-   });
-   ```
+### TransactionInput
 
-2. Replace `tseslint.configs.recommended` with `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`. Optionally, add `...tseslint.configs.stylisticTypeChecked`.
+- **File:** `src/components/TransactionInput/index.tsx`
+- **Description:** Component for inputting new transactions. Users can enter transaction details such as date, account, type, and amount.
 
-3. Install `eslint-plugin-react` and update the config:
+### InterestRules
 
-   ```js
-   // eslint.config.js
-   import react from "eslint-plugin-react";
+- **File:** `src/components/InterestRules/index.tsx`
+- **Description:** Manages the input and display of interest rules for accounts.
 
-   export default tseslint.config({
-     // Set the react version
-     settings: { react: { version: "18.3" } },
-     plugins: {
-       // Add the react plugin
-       react,
-     },
-     rules: {
-       // other rules...
-       // Enable its recommended rules
-       ...react.configs.recommended.rules,
-       ...react.configs["jsx-runtime"].rules,
-     },
-   });
-   ```
+### PrintStatement
+
+- **File:** `src/components/AccountStatement/index.tsx`
+- **Description:** Allows users to print account statements based on the entered transactions and interest rules.
+
+### Quit
+
+- **File:** `src/components/Quit/index.tsx`
+- **Description:** Provides an interface for quitting the application.
 
 ## Contributing
 
