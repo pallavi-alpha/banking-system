@@ -32,6 +32,7 @@ To set up the project locally, follow these steps:
 
    ```bash
    cd banking-system
+   cd frontend
    ```
 
 3. Install the dependencies:
