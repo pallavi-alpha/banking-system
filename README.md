@@ -70,7 +70,34 @@ The frontend will run on **http://localhost:5173/**, and the backend on **http:/
 
 Main Menu
 ![alt text](image.png)
-Coming soon... 📸
+
+Input Transaction Screen
+![alt text](image-2.png)
+
+Define Interest Rate Rules
+![alt text](image-3.png)
+
+Print Statement
+![alt text](image-4.png)
+
+## 🤝 Error Handling, Checks , Validation and Notifications
+
+Format validations:
+![alt text](image-5.png)
+![alt text](image-6.png)
+![alt text](image-7.png)
+
+Validation on transactions older then first transaction:
+![alt text](image-8.png)
+
+Validation on Future Dated transaction:
+![alt text](image-9.png)
+
+Unavailable data:
+![alt text](image-10.png)
+
+Toast Message for Success:
+![alt text](image-11.png)
 
 ## 🤝 Contributing
 
