@@ -68,6 +68,8 @@ The frontend will run on **http://localhost:5173/**, and the backend on **http:/
 
 ## 📸 Screenshots
 
+Main Menu
+![alt text](image.png)
 Coming soon... 📸
 
 ## 🤝 Contributing
