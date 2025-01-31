@@ -1,7 +1,5 @@
 # 🏦 MERN Banking System
 
-![Main Menu](image.png)
-
 A full-stack banking system prototype with transaction management, interest rules, and statement generation capabilities.
 
 ## 📋 Table of Contents
@@ -158,7 +156,7 @@ npm run dev
 
 Some screenshots:
 MainMenu
-![alt text](screens/image-1.pngimage.png)
+![alt text](screens/image.png)
 
 Input Transaction
 ![alt text](screens/image-1.png)
@@ -169,7 +167,7 @@ Define Interest Rule
 Print Statement
 ![alt text](image-4.png)
 
-Validarions and Toast Messages
+Validations and Toast Messages
 ![alt text](image-5.png)
 ![alt text](image-6.png)
 ![alt text](image-7.png)
