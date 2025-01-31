@@ -100,18 +100,18 @@ npm run dev
 
 ### **Transactions**
 
-| Method | Endpoint                       | Description              |
-| ------ | ------------------------------ | ------------------------ |
-| POST   | `/api/v1/transactions`         | Create new transaction   |
-| GET    | `/api/v1/transactions`         | Get all transactions     |
-| GET    | `/api/v1/transactions/monthly` | Get monthly transactions |
+| Method | Endpoint                              | Description              |
+| ------ | ------------------------------------- | ------------------------ |
+| POST   | `/api/v1/transactions/addTransaction` | Create new transaction   |
+| GET    | `/api/v1/transactions`                | Get all transactions     |
+| GET    | `/api/v1/transactions/monthly`        | Get monthly transactions |
 
 ### **Interest Rules**
 
-| Method | Endpoint                 | Description              |
-| ------ | ------------------------ | ------------------------ |
-| POST   | `/api/v1/interest-rules` | Define new interest rule |
-| GET    | `/api/v1/interest-rules` | Get all interest rules   |
+| Method | Endpoint                                      | Description              |
+| ------ | --------------------------------------------- | ------------------------ |
+| POST   | `/api/v1/interest-rules/define-interest-rule` | Define new interest rule |
+| GET    | `/api/v1/interest-rules`                      | Get all interest rules   |
 
 ## 🖥️ Frontend Structure
 
@@ -158,10 +158,13 @@ npm run dev
 
 Some screenshots:
 MainMenu
-![alt text](image.png)
+![alt text](screens/image-1.pngimage.png)
 
 Input Transaction
-![alt text](image-1.png)
+![alt text](screens/image-1.png)
+
+Define Interest Rule
+![alt text](screens/image-3.png)
 
 Print Statement
 ![alt text](image-4.png)

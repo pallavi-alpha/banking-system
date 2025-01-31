@@ -44,7 +44,7 @@ export const getYearMonthlyTransactionsByAccount = async (
 ) => {
   try {
     const response = await axios.get(
-      `${apiUrl}/transactions/getMonthlyTransactions?account=${account}&year=${year}&month=${month}`
+      `${apiUrl}/transactions/monthly?account=${account}&year=${year}&month=${month}`
     );
 
     return response.data || [];

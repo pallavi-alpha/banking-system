@@ -9,6 +9,6 @@ const router = Router();
 
 router.route("/addTransaction").post(addTransaction);
 router.route("/").get(getAllTransactions);
-router.route("/getMonthlyTransactions").get(getTransactionsByYearMonth);
+router.route("/monthly").get(getTransactionsByYearMonth);
 
 export default router;
